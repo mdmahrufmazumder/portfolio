@@ -1,0 +1,147 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.4cm 1.5cm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10.5pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  /* Exclude modals, sticky header, animated canvas, back-to-top, and interactive action controls */
+  [role="dialog"],
+  header,
+  canvas,
+  form,
+  select,
+  button:not(.print-keep),
+  label:has(input[type="file"]),
+  .no-print {
+    display: none !important;
+  }
+
+  /* Minimize all background fills, gradients, and shadows for crisp PDF export */
+  *,
+  *::before,
+  *::after {
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  #root,
+  main,
+  section,
+  article,
+  footer,
+  div {
+    background-color: transparent !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Ensure dark-mode text classes become high-contrast dark ink on white paper */
+  h1,
+  h2,
+  h3,
+  h4,
+  dt,
+  strong {
+    color: #0f172a !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p,
+  span,
+  li,
+  dd,
+  a {
+    color: #1e293b !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    font-family: var(--font-mono);
+    color: #475569 !important;
+    word-break: break-all;
+  }
+
+  /* Tighten vertical spacing for balanced multi-page PDF pagination */
+  section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  article,
+  .rounded-xl,
+  .rounded-2xl {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep hero scrim text readable over portrait if shown, or cleanly framed */
+  .bg-gradient-to-t {
+    background: #ffffff !important;
+    border-top: 1px solid #cbd5e1 !important;
+    position: static !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+}
+
