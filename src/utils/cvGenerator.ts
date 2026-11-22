@@ -1,7 +1,7 @@
-import { jsPDF } from 'jspdf';
 import type { PortfolioData } from '../types/portfolio';
 
-export function downloadPortfolioCvPdf(data: PortfolioData): void {
+export async function downloadPortfolioCvPdf(data: PortfolioData): Promise<void> {
+  const { jsPDF } = await import('jspdf');
   const doc = new jsPDF({ unit: 'pt', format: 'a4' });
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();

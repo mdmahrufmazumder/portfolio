@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, type ChangeEvent } from 'react';
 import {
   Award,
   Check,
+  Download,
   ExternalLink,
   FileText,
   Maximize2,
@@ -531,7 +532,23 @@ export function CertificationsSection({
                 </>
               )}
 
-              <label className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-medium text-slate-200 hover:border-cyan-500 cursor-pointer">
+              {viewingCert.imageUrl && (
+                <a
+                  href={viewingCert.imageUrl}
+                  download={
+                    viewingCert.fileName ||
+                    `${viewingCert.title.replace(/[^a-zA-Z0-9]+/g, '_')}.${
+                      viewingCert.fileType === 'pdf' ? 'pdf' : 'png'
+                    }`
+                  }
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-medium text-slate-200 hover:border-cyan-500"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">Download</span>
+                </a>
+              )}
+
+              <label className="no-print inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-medium text-slate-200 hover:border-cyan-500 cursor-pointer">
                 <Upload className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">
                   {viewingCert.imageUrl ? 'Replace File' : 'Upload Scan/PDF'}
