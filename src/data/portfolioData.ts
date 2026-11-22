@@ -6,7 +6,7 @@ export const DEFAULT_PORTFOLIO_DATA: PortfolioData = {
     headline: 'Aspiring Researcher | EEE Undergraduate | Materials Science Enthusiast',
     intro:
       'I am an ambitious undergraduate with a strong interest in scientific research, emerging technologies, and interdisciplinary innovation. My academic interests span computational materials science, semiconductor technology, quantum computing, and advanced energy materials. I am passionate about exploring scientific challenges and contributing to meaningful research.',
-    portraitUrl: '/src/assets/images/hero_researcher_portrait_1795332462169.jpg',
+    portraitUrl: './src/assets/images/hero_researcher_portrait_1795332462169.jpg',
     email: 'mdmahrufmazumder@gmail.com',
     phone: '+8801615787160',
     location: 'Parshuram, Feni, Bangladesh',
@@ -250,7 +250,7 @@ export const DEFAULT_PORTFOLIO_DATA: PortfolioData = {
       description:
         'A healthcare application designed to scan and provide basic medical information through a simple and user-friendly interface.',
       technologies: ['Mobile Interface Design', 'Optical Scan Workflow', 'Medical Information Access'],
-      imageUrl: '/src/assets/images/project_mediscan_app_1795332463293.jpg',
+      imageUrl: './src/assets/images/project_mediscan_app_1795332463293.jpg',
       githubUrl: '',
       demoUrl: '',
       highlights: [
@@ -265,7 +265,7 @@ export const DEFAULT_PORTFOLIO_DATA: PortfolioData = {
       description:
         'Developed an autonomous line-following robot integrating real-time optical reflectance sensing and dual-channel motor control, demonstrating practical hardware integration and embedded control.',
       technologies: ['Arduino Nano', 'QTR-8RC Sensor Array', 'TB6612FNG Motor Driver', 'Embedded C/C++'],
-      imageUrl: '/src/assets/images/project_line_follower_1795332464372.jpg',
+      imageUrl: './src/assets/images/project_line_follower_1795332464372.jpg',
       githubUrl: '',
       demoUrl: '',
       highlights: [

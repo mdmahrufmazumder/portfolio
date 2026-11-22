@@ -169,7 +169,7 @@ export function ResearchSection({
               <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#0D1320] aspect-video">
                 {!bannerError ? (
                   <img
-                    src="/src/assets/images/research_lattice_banner_1795332462302.jpg"
+                    src="./src/assets/images/research_lattice_banner_1795332462302.jpg"
                     alt="Isometric scientific visualization of perovskite lattice and semiconductor traces"
                     referrerPolicy="no-referrer"
                     onError={() => setBannerError(true)}
